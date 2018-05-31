@@ -399,7 +399,7 @@ function printDocToString(doc, options) {
                   }
                 }
 
-                const length = ind.indent * options.tabWidth + ind.align.spaces;
+                const length = ind.indent * (options.tabWidth === undefined ? 0 : options.tabWidth) + ind.align.spaces;
                 const indentString = options.useTabs
                   ? "\t".repeat(ind.indent + ind.align.tabs)
                   : " ".repeat(length);
